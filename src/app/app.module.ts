@@ -8,16 +8,20 @@ import { AppRoutingModule } from 'app/app-routing.module';
 import { AppComponent } from 'app/app.component';
 import { BaseModule } from 'app/base/base.module';
 import { SharedModule } from 'app/shared/shared.module';
+import { ProductsAdminComponent } from './product/products-admin/products-admin.component';
+import { ProductsComponent } from './product/products/products.component';
+import { ProductModule } from './product/product.module';
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent, ProductsAdminComponent, ProductsComponent],
   imports: [
     BrowserModule,
     HttpClientModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     SharedModule,
-    BaseModule
+    BaseModule,
+    ProductModule
   ],
   providers: [
     { provide: LOCALE_ID, useValue: 'en' }
