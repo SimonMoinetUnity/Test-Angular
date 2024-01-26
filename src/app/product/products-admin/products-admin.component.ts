@@ -10,7 +10,6 @@ import { Product } from '../product.modele';
 export class ProductsAdminComponent implements OnInit {
 
   products: any[] = [];
-  products2 = [1,2,3];
 
   constructor(private productService: ProductService) {}
 
@@ -19,7 +18,6 @@ export class ProductsAdminComponent implements OnInit {
       this.products = data.data;
       console.log(this.products)
     });
-    console.log(this.products[1])
   }
 
   deleteProduct(productId: number): void {
