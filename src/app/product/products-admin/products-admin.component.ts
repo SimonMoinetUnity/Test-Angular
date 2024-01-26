@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ProductService } from '../product.service';
+import { Product } from '../product.modele';
 
 @Component({
   selector: 'app-products-admin',
@@ -7,9 +9,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProductsAdminComponent implements OnInit {
 
-  constructor() { }
+  products: any[] = [];
+  products2 = [1,2,3];
 
-  ngOnInit(): void {
+  constructor(private productService: ProductService) {}
+
+  ngOnInit() {
+    this.productService.getProducts().subscribe((data) => {
+      this.products = data.data;
+      console.log(this.products)
+    });
+    console.log(this.products[1])
+  }
+
+  deleteProduct(productId: number): void {
+    console.log("Le produit " + productId + " a été supprimé")
   }
 
 }
