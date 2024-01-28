@@ -5,8 +5,8 @@ import { ProductsAdminComponent } from './products-admin/products-admin.componen
 
 
 const routes: Routes = [
-  { path: 'admin/products', component: ProductsAdminComponent },
-  { path: 'products', component: ProductsComponent },
+  { path: 'admin', component: ProductsAdminComponent },
+  { path: '', component: ProductsComponent },
 ];
 
 @NgModule({

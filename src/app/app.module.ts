@@ -22,7 +22,6 @@ import { NgxPaginationModule } from 'ngx-pagination';
     BrowserAnimationsModule,
     SharedModule,
     BaseModule,
-    ProductModule,
   ],
   providers: [
     { provide: LOCALE_ID, useValue: 'en' }
