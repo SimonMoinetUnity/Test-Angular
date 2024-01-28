@@ -1,9 +1,8 @@
-<table>
+<table class="centered-table">
     <thead>
       <tr>
         <th>Code</th>
-        <th>Nom</th>
-        <th>Action</th>
+        <th>Name</th>
       </tr>
     </thead>
     <tbody>
@@ -11,7 +10,10 @@
         <td>{{ product.code }}</td>
         <td>{{ product.name }}</td>
         <td>
-          <button (click)="deleteProduct(product.id)">Supprimer</button>
+          <button (click)="deleteProduct(product.id)">Delete</button>
+        </td>
+        <td>
+          <button (click)="updateArticle(product.id)">Update</button>
         </td>
       </tr>
     </tbody>

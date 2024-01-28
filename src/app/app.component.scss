@@ -6,12 +6,10 @@
     z-index: 1;
 }
 
-.app-main {
-    height: 50px;
-    margin-left: 60px;
-    position: fixed;
-    width: 100%;
-    z-index: 2;
+.router-outlet-container {
+    height: 650px; 
+    overflow-y: auto;
   }
+  
 
   

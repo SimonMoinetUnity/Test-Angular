@@ -11,6 +11,7 @@ import { SharedModule } from 'app/shared/shared.module';
 import { ProductsAdminComponent } from './product/products-admin/products-admin.component';
 import { ProductsComponent } from './product/products/products.component';
 import { ProductModule } from './product/product.module';
+import { NgxPaginationModule } from 'ngx-pagination';
 
 @NgModule({
   declarations: [AppComponent, ProductsAdminComponent, ProductsComponent],
@@ -21,7 +22,7 @@ import { ProductModule } from './product/product.module';
     BrowserAnimationsModule,
     SharedModule,
     BaseModule,
-    ProductModule
+    ProductModule,
   ],
   providers: [
     { provide: LOCALE_ID, useValue: 'en' }

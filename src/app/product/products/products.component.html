@@ -1,11 +1,10 @@
-<table>
+<table class="centered-table ">
     <thead>
       <tr>
         <th>Category</th>
         <th>Status</th>
         <th>Name</th>
         <th>Price</th>
-        <th>Action</th>
       </tr>
     </thead>
     <tbody>
@@ -14,9 +13,6 @@
         <td>{{ product.inventoryStatus }}</td>
         <td>{{ product.name }}</td>
         <td>${{ product.price }}</td>
-        <td>
-          <button (click)="deleteProduct(product.id)">Ajouter au panier</button>
-        </td>
       </tr>
     </tbody>
   </table>

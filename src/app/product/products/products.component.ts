@@ -19,8 +19,4 @@ export class ProductsComponent implements OnInit {
     });
   }
 
-  deleteProduct(productId: number): void {
-    console.log("Le produit " + productId + " a été supprimé")
-  }
-
 }

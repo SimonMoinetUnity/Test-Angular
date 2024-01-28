@@ -24,4 +24,9 @@ export class ProductsAdminComponent implements OnInit {
     console.log("Le produit " + productId + " a été supprimé")
   }
 
+  updateArticle(productId: number): void {
+    console.log("Redirection vers la page du pruduit " + productId)
+  }
+
+
 }
