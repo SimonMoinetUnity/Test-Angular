@@ -1,5 +1,12 @@
 <section class="py-1">
   <div class="container">
+    <ngb-pagination
+        [(page)]="currentPage"
+        [pageSize]="itemsPerPage"
+        [collectionSize]="allProducts.length"
+        (pageChange)="updateProducts()">
+      </ngb-pagination>
+
     <table class="table">
       <thead>
         <tr>

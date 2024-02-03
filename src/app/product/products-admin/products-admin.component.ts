@@ -9,15 +9,21 @@ import { Product } from '../product.modele';
 })
 export class ProductsAdminComponent implements OnInit {
 
+  allProducts: any[] = []
   products: any[] = [];
+  currentPage = 1;
+  itemsPerPage = 10;
 
   constructor(private productService: ProductService) {}
 
   ngOnInit() {
     this.productService.getProducts().subscribe((data) => {
-      this.products = data.data;
+      this.allProducts = data.data;
       console.log(this.products)
+      const startIndex = (this.currentPage - 1) * this.itemsPerPage;
+      this.products = this.allProducts.slice(0, startIndex + this.itemsPerPage);
     });
+    
   }
 
   deleteProduct(productId: number): void {
@@ -26,6 +32,11 @@ export class ProductsAdminComponent implements OnInit {
 
   updateArticle(productId: number): void {
     console.log("Redirection vers la page du pruduit " + productId)
+  }
+
+  updateProducts() {
+    const startIndex = (this.currentPage - 1) * this.itemsPerPage;
+    this.products = this.allProducts.slice(startIndex, startIndex + this.itemsPerPage);
   }
 
 
