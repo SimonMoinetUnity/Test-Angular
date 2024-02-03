@@ -1,18 +1,16 @@
-<table class="centered-table ">
-    <thead>
-      <tr>
-        <th>Category</th>
-        <th>Status</th>
-        <th>Name</th>
-        <th>Price</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor="let product of products">
-        <td>{{ product.category }}</td>
-        <td>{{ product.inventoryStatus }}</td>
-        <td>{{ product.name }}</td>
-        <td>${{ product.price }}</td>
-      </tr>
-    </tbody>
-  </table>
+<section class="py-1">
+  <div class="container">
+
+    <div class="container-fluid">
+      <div class="row my-5">
+        <ng-container *ngFor="let product of products">
+          <div class="col-12 col-md-3 my-2 justify-content-between">
+            <app-product-card class="image-item" [product]="product"></app-product-card>
+          </div>
+        </ng-container>
+      </div>
+    </div>
+
+  </div>
+
+</section>

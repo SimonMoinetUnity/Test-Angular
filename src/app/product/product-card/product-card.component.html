@@ -1,0 +1,12 @@
+<div class="card">
+    <div class="card-body">
+        <p class="card-text">{{product.category}}</p>
+        <p class="card-text">{{product.inventoryStatus}}</p><br>
+        <p class="card-text">{{product.name}}</p>
+        <p class="card-text">{{product.description}}</p>
+        <div class="small-ratings">{{product.rating}}
+            <i *ngFor="let etoile of etoiles" class="fa" [ngClass]="{'fa-star': etoile.remplie, 'fa-star-o': !etoile.remplie, 'rating-color': true}"></i>
+        </div>
+      <a href="#" class="btn btn-primary"><i class="bi bi-cart"></i></a>
+    </div>
+</div>

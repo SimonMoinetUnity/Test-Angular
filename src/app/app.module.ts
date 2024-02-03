@@ -10,11 +10,10 @@ import { BaseModule } from 'app/base/base.module';
 import { SharedModule } from 'app/shared/shared.module';
 import { ProductsAdminComponent } from './product/products-admin/products-admin.component';
 import { ProductsComponent } from './product/products/products.component';
-import { ProductModule } from './product/product.module';
-import { NgxPaginationModule } from 'ngx-pagination';
+import { ProductCardComponent } from './product/product-card/product-card.component';
 
 @NgModule({
-  declarations: [AppComponent, ProductsAdminComponent, ProductsComponent],
+  declarations: [AppComponent, ProductsAdminComponent, ProductsComponent, ProductCardComponent],
   imports: [
     BrowserModule,
     HttpClientModule,
