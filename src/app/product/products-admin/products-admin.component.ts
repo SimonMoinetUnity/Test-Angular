@@ -9,10 +9,11 @@ import { Product } from '../product.modele';
 })
 export class ProductsAdminComponent implements OnInit {
 
-  allProducts: any[] = []
-  products: any[] = [];
+  allProducts: Product[] = []
+  products: Product[] = [];
   currentPage = 1;
   itemsPerPage = 10;
+  searchTerm: string = '';
 
   constructor(private productService: ProductService) {}
 
@@ -20,8 +21,7 @@ export class ProductsAdminComponent implements OnInit {
     this.productService.getProducts().subscribe((data) => {
       this.allProducts = data.data;
       console.log(this.products)
-      const startIndex = (this.currentPage - 1) * this.itemsPerPage;
-      this.products = this.allProducts.slice(0, startIndex + this.itemsPerPage);
+      this.updateProducts();
     });
     
   }
@@ -36,7 +36,17 @@ export class ProductsAdminComponent implements OnInit {
 
   updateProducts() {
     const startIndex = (this.currentPage - 1) * this.itemsPerPage;
-    this.products = this.allProducts.slice(startIndex, startIndex + this.itemsPerPage);
+    let filteredProducts = this.allProducts;
+
+    // Filtrer les produits en fonction de la chaîne de recherche
+    if (this.searchTerm.trim() !== '') {
+      filteredProducts = this.allProducts.filter(product =>
+        product.name.toLowerCase().includes(this.searchTerm.toLowerCase())
+      );
+    }
+
+    // Paginer les produits filtrés
+    this.products = filteredProducts.slice(startIndex, startIndex + this.itemsPerPage);
   }
 
 

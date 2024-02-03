@@ -1,15 +1,23 @@
 <section class="py-1">
   <div class="container">
+
+    <!-- Barre de recherche -->
+    <div class="col-2 mb-3">
+      <input type="text" class="form-control" placeholder="Rechercher un produit" [(ngModel)]="searchTerm" (input)="updateProducts()">
+    </div>
+
+    <!-- Pagination -->
+    <ngb-pagination
+      [(page)]="currentPage"
+      [pageSize]="itemsPerPage"
+      [collectionSize]="allProducts.length"
+      (pageChange)="updateProducts()">
+    </ngb-pagination>
+    
     <div class="container-fluid">
-      <div class="row my-5">
+      <div class="row">
 
-        <ngb-pagination
-        [(page)]="currentPage"
-        [pageSize]="itemsPerPage"
-        [collectionSize]="allProducts.length"
-        (pageChange)="updateProducts()">
-        </ngb-pagination>
-
+        <!-- Affichage des produits -->
         <div class="col-12 col-md-3 my-2 justify-content-between" *ngFor="let product of products">
           <app-product-card class="image-item" [product]="product"></app-product-card>
         </div>

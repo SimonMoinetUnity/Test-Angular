@@ -1,12 +1,20 @@
 <section class="py-1">
   <div class="container">
+
+    <!-- Barre de recherche -->
+    <div class="col-2 mb-3">
+      <input type="text" class="form-control" placeholder="Rechercher un produit" [(ngModel)]="searchTerm" (input)="updateProducts()">
+    </div>
+
+    <!-- Pagination -->
     <ngb-pagination
         [(page)]="currentPage"
         [pageSize]="itemsPerPage"
         [collectionSize]="allProducts.length"
         (pageChange)="updateProducts()">
-      </ngb-pagination>
+    </ngb-pagination>
 
+    <!-- Tableau des produits -->
     <table class="table">
       <thead>
         <tr>
