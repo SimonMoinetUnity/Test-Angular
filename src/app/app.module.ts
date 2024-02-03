@@ -11,6 +11,7 @@ import { SharedModule } from 'app/shared/shared.module';
 import { ProductsAdminComponent } from './product/products-admin/products-admin.component';
 import { ProductsComponent } from './product/products/products.component';
 import { ProductCardComponent } from './product/product-card/product-card.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [AppComponent, ProductsAdminComponent, ProductsComponent, ProductCardComponent],
@@ -21,6 +22,7 @@ import { ProductCardComponent } from './product/product-card/product-card.compon
     BrowserAnimationsModule,
     SharedModule,
     BaseModule,
+    NgbModule,
   ],
   providers: [
     { provide: LOCALE_ID, useValue: 'en' }
