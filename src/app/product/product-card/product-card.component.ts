@@ -24,4 +24,8 @@ export class ProductCardComponent {
     }
   }
 
+  ajouterAupanier(){
+    console.log("Le produit a été ajouté au panier.")
+  }
+
 }
