@@ -13,7 +13,7 @@ export class ProductCardComponent {
 
   etoiles: any[] = [];
 
-  ngOnInit(): void {
+  ngOnInit(){
     this.genererEtoiles();
   }
 

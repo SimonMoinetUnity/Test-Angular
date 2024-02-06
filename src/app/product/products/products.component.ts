@@ -7,7 +7,7 @@ import { Product } from '../product.modele';
   templateUrl: './products.component.html',
   styleUrls: ['./products.component.scss']
 })
-export class ProductsComponent implements OnInit {
+export class ProductsComponent  {
   
   allProducts: Product[] = []
   products: Product[] = [];
@@ -22,10 +22,8 @@ export class ProductsComponent implements OnInit {
   ngOnInit() {
     this.productService.getProducts().subscribe((data) => {
       this.allProducts = data.data;
-      console.log(this.products)
       this.updateProducts();
     });
-    
   }
 
   updateProducts() {
